@@ -48,11 +48,6 @@ export const homeData = {
     "Whether I’m tuning machine learning models, optimizing corporate workflows, or tinkering with my instruments and culinary experiments over the weekend, I am obsessed with finding the ‘why’ behind the what. I believe life—and data—is better when you find the perfect balance of sweet, sour, and spicy.",
   ],
   signOff: "Yours with 95% confidence, Shashwat",
-  impactStats: [
-    { value: "80%", label: "Workflow Optimization" },
-    { value: "50+", label: "Researchers Led" },
-    { value: "0.34 RMSE", label: "Predictive Fidelity" },
-  ],
 };
 
 export const experienceData = [

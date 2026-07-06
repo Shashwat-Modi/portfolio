@@ -13,24 +13,20 @@ const tierDotClass = {
   tertiary: "h-2.5 w-2.5 bg-stone-600",
 };
 
-function TimelineNode({ node, isLast }) {
+function TimelineNode({ node }) {
   return (
     <motion.div
-      className="relative flex gap-6 pb-20 last:pb-0 md:gap-10"
+      className="relative pb-32 last:pb-0 md:pb-40"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* connecting line + dot */}
-      <div className="relative flex w-6 flex-none flex-col items-center md:w-8">
-        <span className={`z-10 mt-1.5 flex-none rounded-full ${tierDotClass[node.tier]}`} />
-        {!isLast && <span className="mt-1 w-px flex-1 bg-gradient-to-b from-stone-700 to-stone-800/40" />}
-      </div>
+      <span
+        className={`absolute -left-10 top-1.5 -translate-x-1/2 rounded-full ring-4 ring-zinc-900 md:-left-14 ${tierDotClass[node.tier]}`}
+      />
 
-      {/* content */}
       <motion.div
-        className="flex-1 pt-0"
         initial={{ scale: 1 }}
         whileInView={{ scale: 1.05 }}
         viewport={{ once: false, amount: 0.6 }}
@@ -63,9 +59,9 @@ export default function Journey() {
         A timeline of the people and places that shaped how I think about data — and everything else.
       </p>
 
-      <div className="mt-20 md:mt-28">
-        {orderedJourney.map((node, i) => (
-          <TimelineNode key={`${node.title}-${node.date}`} node={node} isLast={i === orderedJourney.length - 1} />
+      <div className="relative mt-24 border-l border-stone-700/50 pl-10 md:mt-32 md:pl-14">
+        {orderedJourney.map((node) => (
+          <TimelineNode key={`${node.title}-${node.date}`} node={node} />
         ))}
       </div>
     </section>

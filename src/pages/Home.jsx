@@ -4,51 +4,43 @@ export default function Home() {
   const [signOffPrefix] = homeData.signOff.split("Shashwat");
 
   return (
-    <section className="mx-auto flex max-w-6xl flex-col-reverse gap-16 px-6 py-16 md:flex-row md:items-start md:gap-12 md:px-10 md:py-28">
-      {/* Left column — the letter */}
-      <div className="flex-1 md:pt-6">
-        <p className="mb-6 font-serif text-sm uppercase tracking-[0.3em] text-stone-500">
+    <section className="mx-auto flex max-w-4xl flex-col px-6 py-10 md:h-[calc(100svh-4rem)] md:justify-between md:px-10 md:py-12">
+      <div>
+        <p className="font-serif text-xs uppercase tracking-[0.3em] text-stone-500 sm:text-sm">
           {siteMeta.role}
         </p>
-        <h1 className="max-w-xl font-serif text-3xl leading-tight text-zinc-100 sm:text-4xl md:text-5xl">
-          {homeData.heading}
+        <h1 className="mt-1.5 font-serif text-2xl font-bold text-zinc-100 sm:text-3xl">
+          {siteMeta.name}
         </h1>
 
-        <div className="mt-10 max-w-2xl space-y-6">
-          {homeData.paragraphs.map((paragraph, i) => (
-            <p key={i} className="font-sans text-base leading-relaxed text-zinc-300">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-12 grid max-w-2xl grid-cols-1 gap-8 border-t border-zinc-800/70 pt-8 md:grid-cols-3 md:gap-6">
-          {homeData.impactStats.map((stat) => (
-            <div key={stat.label}>
-              <p className="font-serif text-2xl text-zinc-100 sm:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-500">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-14 text-2xl leading-relaxed text-stone-300 md:text-3xl">
-          {signOffPrefix}
-          <span className="font-cursive text-4xl text-stone-100 md:text-5xl">Shashwat</span>
-        </p>
-      </div>
-
-      {/* Right column — dynamic photo placeholder */}
-      <div className="flex flex-1 items-start justify-center md:justify-end">
-        <div className="relative aspect-[4/5] w-full max-w-sm">
-          <div className="absolute -inset-3 border border-stone-700/40" />
-          <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-800 via-zinc-900 to-zinc-950">
+        <div className="mt-5 flow-root sm:mt-6">
+          <div className="relative float-left mr-6 mb-3 aspect-[4/5] w-32 overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-800 via-zinc-900 to-zinc-950 sm:w-40 md:w-44">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(214,211,209,0.12),transparent_60%)]" />
-            <span className="font-serif text-sm uppercase tracking-[0.35em] text-stone-500">
-              Photo Coming Soon
-            </span>
+            <div className="flex h-full w-full items-center justify-center px-2">
+              <span className="text-center font-serif text-[9px] uppercase tracking-[0.3em] text-stone-500">
+                Photo Coming Soon
+              </span>
+            </div>
+          </div>
+
+          <h2 className="font-serif text-lg leading-snug text-zinc-100 sm:text-xl md:text-2xl">
+            {homeData.heading}
+          </h2>
+
+          <div className="mt-4 space-y-3">
+            {homeData.paragraphs.map((paragraph, i) => (
+              <p key={i} className="font-sans text-sm leading-relaxed text-zinc-300">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </div>
+
+      <p className="mt-8 self-end text-right text-lg leading-relaxed text-stone-300 md:mt-0 md:text-xl">
+        {signOffPrefix}
+        <span className="font-cursive text-3xl text-stone-100 md:text-4xl">Shashwat</span>
+      </p>
     </section>
   );
 }
