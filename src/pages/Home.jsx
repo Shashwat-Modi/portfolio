@@ -1,6 +1,8 @@
 import { homeData, siteMeta } from "../data/contentData";
 
 export default function Home() {
+  const [signOffPrefix] = homeData.signOff.split("Shashwat");
+
   return (
     <section className="mx-auto flex max-w-6xl flex-col-reverse gap-16 px-6 py-16 md:flex-row md:items-start md:gap-12 md:px-10 md:py-28">
       {/* Left column — the letter */}
@@ -12,7 +14,7 @@ export default function Home() {
           {homeData.heading}
         </h1>
 
-        <div className="mt-10 max-w-xl space-y-6">
+        <div className="mt-10 max-w-2xl space-y-6">
           {homeData.paragraphs.map((paragraph, i) => (
             <p key={i} className="font-sans text-base leading-relaxed text-zinc-300">
               {paragraph}
@@ -20,8 +22,18 @@ export default function Home() {
           ))}
         </div>
 
-        <p className="mt-14 font-cursive text-4xl text-stone-300 md:text-5xl">
-          {homeData.signOff}
+        <div className="mt-12 grid max-w-2xl grid-cols-1 gap-8 border-t border-zinc-800/70 pt-8 md:grid-cols-3 md:gap-6">
+          {homeData.impactStats.map((stat) => (
+            <div key={stat.label}>
+              <p className="font-serif text-2xl text-zinc-100 sm:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-500">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-14 text-2xl leading-relaxed text-stone-300 md:text-3xl">
+          {signOffPrefix}
+          <span className="font-cursive text-4xl text-stone-100 md:text-5xl">Shashwat</span>
         </p>
       </div>
 

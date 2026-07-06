@@ -48,6 +48,11 @@ export const homeData = {
     "Whether I’m tuning machine learning models, optimizing corporate workflows, or tinkering with my instruments and culinary experiments over the weekend, I am obsessed with finding the ‘why’ behind the what. I believe life—and data—is better when you find the perfect balance of sweet, sour, and spicy.",
   ],
   signOff: "Yours with 95% confidence, Shashwat",
+  impactStats: [
+    { value: "80%", label: "Workflow Optimization" },
+    { value: "50+", label: "Researchers Led" },
+    { value: "0.34 RMSE", label: "Predictive Fidelity" },
+  ],
 };
 
 export const experienceData = [
@@ -139,55 +144,124 @@ export const projectsData = [
 
 export const journeyData = [
   {
-    id: "foundation",
-    kind: "foundation",
-    timestamp: "The Beginning",
-    title: "Swati & Ashish Modi",
-    description:
-      "Before any of the data, degrees, or titles, there were two people who taught me how to ask questions in the first place. Every model I've ever built rests on a foundation my parents poured first — patience, curiosity, and the quiet insistence that the 'why' always matters more than the 'what'.",
-  },
-  {
-    id: "cathedral",
-    timestamp: "Feb 2008 — May 2019",
-    title: "The Cathedral and John Connon School",
-    description:
-      "Eleven years of foundation — where curiosity was first encouraged to wander, and where the earliest habits of discipline and inquiry took root.",
-  },
-  {
-    id: "navy-children",
-    timestamp: "Jun 2019 — Jul 2021",
-    title: "Navy Children School",
-    description:
-      "A formative chapter of structure and resilience, carrying lessons in discipline that would later show up in every rigorous cross-validation fold.",
-  },
-  {
-    id: "nmims",
-    timestamp: "Aug 2022 — Aug 2025",
-    title: "NMIMS",
-    description:
-      "Three years that turned potential into leadership. As President of the Placement Cell, spearheaded the flagship 'Extempore' event from concept to execution. As a Founding Member of the Research Cell, led a 50-student team to deliver an inter-college symposium for 100+ participants — proof that the right process, applied with the right people, scales.",
-  },
-  {
-    id: "aaft",
-    timestamp: "Dec 2024 — Jun 2025",
-    title: "AAFT",
-    description:
-      "A parallel pursuit — stepping outside the spreadsheet to explore craft and creativity on its own terms.",
-  },
-  {
-    id: "rotaract",
-    timestamp: "Oct 2024 — Jun 2025",
-    title: "Rotaract Club of Bombay West",
-    description:
-      "Service alongside strategy — a reminder that impact worth measuring isn't always the kind you can put in a regression.",
-  },
-  {
-    id: "cornell",
-    timestamp: "Jul 2025 — May 2026",
+    date: "Aug 2025 — May 2026",
     title: "Cornell University",
-    description:
-      "A Master's in Data Science and Applied Statistics, capped by the Capstone Leadership Award. Beyond the coursework, this chapter has been about mentorship — including the quiet satisfaction of watching a junior, 'M', grow more confident with every dataset handed her way.",
+    byline: "Master's in Data Science and Applied Statistics",
+    tier: "primary",
+    description: "Honored with the Capstone Leadership Award. More importantly, this was a period of deep academic collaboration. Served as a Course Assistant for NBA 6215 under [Professor Name] and mentored junior researchers like 'M' in advanced data pipelines, learning as much from them as I taught."
   },
+  {
+    date: "Dec 2025",
+    title: "Pitasana Hath Yoga",
+    byline: "Yoga Certification",
+    tier: "tertiary",
+    description: "A continuation of my mind-body discipline. [Add heartfelt sentence about what this specific practice taught you or who guided you here]."
+  },
+  {
+    date: "Dec 2025",
+    title: "Northern Shaolin Kung-Fu",
+    byline: "Yellow Sash (9 Stars)",
+    tier: "tertiary",
+    description: "Mastery of internal and external mechanics, balancing flexibility with striking power."
+  },
+  {
+    date: "Aug 2022 — Aug 2025",
+    title: "NMIMS (Narsee Monjee Institute of Management Studies)",
+    byline: "B.Sc. Applied Statistics & Analytics",
+    tier: "primary",
+    description: "Three years that turned potential into leadership, heavily influenced by mentors like [Name]. As President of the Placement Cell, I spearheaded 'Extempore', and as a Founding Member of the Research Cell, led a 50-student team for an inter-college symposium."
+  },
+  {
+    date: "Dec 2024 — Jun 2025",
+    title: "Asian Academy of Film and Television (AAFT)",
+    byline: "Music Production Diploma",
+    tier: "tertiary",
+    description: "A necessary step outside the spreadsheet. Exploring craft, rhythm, and creativity on its own terms under the guidance of [Instructor/Peer Name]."
+  },
+  {
+    date: "Oct 2024 — Jun 2025",
+    title: "Rotaract Club of Bombay West",
+    byline: "Community Service & Strategy",
+    tier: "tertiary",
+    description: "Service alongside strategy. A grounding experience that reminded me that the impact most worth measuring isn't always the kind you can put in a regression model, thanks to the community built with [Name/Group]."
+  },
+  {
+    date: "Mar 2025 — May 2025",
+    title: "Emcure Pharmaceuticals",
+    byline: "Market Research Intern",
+    tier: "secondary",
+    description: "Spearheaded a Six Sigma DMEDI framework and engineered Python-based SARIMA models to forecast trends. I also focused on operational efficiency by automating tedious manual tasks previously done by an employee on MS Excel."
+  },
+  {
+    date: "Dec 2024",
+    title: "Kyokoshinkai Karate-do",
+    byline: "3rd Degree Black Belt (San-Dan)",
+    tier: "tertiary",
+    description: "Mastery of form, endurance, and absolute discipline. This resilience translates into every other arena of my life, a mindset instilled by my Sensei, [Name]."
+  },
+  {
+    date: "May 2024 — Jun 2024",
+    title: "ICICI Bank",
+    byline: "Project Intern",
+    tier: "secondary",
+    description: "Executed end-to-end opportunity estimation for NRI ecosystem growth via demographic data scraping under the mentorship of [Manager Name]."
+  },
+  {
+    date: "Jun 2023 — Jul 2023",
+    title: "Ernst & Young (EY)",
+    byline: "Summer Intern",
+    tier: "secondary",
+    description: "Executed insurance claims analytics through Python-driven exploratory data analysis. A foundational look into corporate data structures, guided by [Manager Name]."
+  },
+  {
+    date: "Apr 2023",
+    title: "Ai-do & Ko-bu-do",
+    byline: "Black Belts",
+    tier: "tertiary",
+    description: "Dual mastery in unarmed and weapons-based martial disciplines, anchoring a long-term commitment to traditional arts and focus."
+  },
+  {
+    date: "Dec 2022",
+    title: "Tai-chi",
+    byline: "Black Sash",
+    tier: "tertiary",
+    description: "Mastery of internal martial arts, emphasizing breath control, pacing, and fluid biomechanics under the guidance of [Name]."
+  },
+  {
+    date: "Jun 2019 — Jul 2021",
+    title: "Navy Children School",
+    byline: "Higher Secondary Education",
+    tier: "primary",
+    description: "Crucial years of academic transition and adaptability, refining the analytical focus required for advanced statistical sciences, championed by teachers like [Name]."
+  },
+  {
+    date: "Feb 2008 — May 2019",
+    title: "The Cathedral and John Connon School",
+    byline: "Primary & Secondary Education",
+    tier: "primary",
+    description: "Eleven years of foundation — where curiosity was first encouraged to wander. Deeply grateful to educators like [Name] who shaped my earliest habits of inquiry."
+  },
+  {
+    date: "Jun 2018",
+    title: "Trinity College London",
+    byline: "Grade 8 Piano",
+    tier: "tertiary",
+    description: "A testament to years of technical discipline and musicality. Deepest gratitude to my teachers, Leon DSouza and Charmis Braganza, for guiding this journey."
+  },
+  {
+    date: "2013 — 2014",
+    title: "The Cathedral and John Connon School",
+    byline: "House Captain (7th Grade)",
+    tier: "tertiary",
+    description: "An early introduction to team leadership and responsibility, setting the stage for future operational roles."
+  },
+  {
+    date: "The Beginning",
+    title: "Swati & Ashish Modi",
+    byline: "Foundation",
+    tier: "primary",
+    description: "Before any of the data, degrees, or titles, there were two people who taught me how to ask questions in the first place. Every model I've ever built rests on a foundation my parents poured first — patience, curiosity, and the quiet insistence that the 'why' always matters more than the 'what'."
+  }
 ];
 
 export const compilingPageData = {

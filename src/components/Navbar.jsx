@@ -115,7 +115,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
         <Link
           to={navData.brand.to}
-          className="font-serif text-lg tracking-wide text-zinc-100 transition-colors duration-200 hover:text-stone-300"
+          className="font-serif text-lg font-bold tracking-wide text-zinc-100 transition-all duration-200 hover:text-stone-300 hover:tracking-wider"
         >
           {navData.brand.label}
         </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-stone-400 px-4 py-1.5 text-sm tracking-wide text-stone-300 transition-colors duration-200 hover:border-zinc-100 hover:bg-zinc-100 hover:text-zinc-900"
+            className="border border-stone-400/70 px-4 py-1.5 text-sm tracking-wide text-stone-300 opacity-70 transition-all duration-200 hover:border-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 hover:opacity-100"
           >
             {navData.resume.label}
           </a>
@@ -184,7 +184,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="my-6 border border-stone-400 py-3 text-center text-sm tracking-wide text-stone-300"
+            className="my-6 border border-stone-400/70 py-3 text-center text-sm tracking-wide text-stone-300 opacity-70"
           >
             {navData.resume.label}
           </a>
