@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
-import Starfield from "./Starfield";
+import Chatbot from "./Chatbot";
 
 export default function Layout() {
   const location = useLocation();
@@ -12,8 +12,7 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="relative flex min-h-screen flex-col font-sans text-zinc-100">
-      <Starfield />
+    <div className="relative flex min-h-screen flex-col bg-snowfall font-sans text-dark-night">
       <div className="bg-noise" aria-hidden="true" />
       <div className="relative z-10 flex min-h-screen flex-col">
         <Navbar />
@@ -31,11 +30,12 @@ export default function Layout() {
           </AnimatePresence>
         </main>
         {location.pathname !== "/" && (
-          <footer className="border-t border-zinc-800/70 px-6 py-8 text-center text-xs tracking-wide text-stone-600 md:px-10">
+          <footer className="border-t border-temple-grey px-6 py-8 text-center font-label text-xs font-light tracking-wide text-roasted-cashew md:px-10">
             © {new Date().getFullYear()} Shashwat Modi
           </footer>
         )}
       </div>
+      <Chatbot />
     </div>
   );
 }

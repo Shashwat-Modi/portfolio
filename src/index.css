@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-cursive: "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-cursive: "Pinyon Script", cursive;
+  --font-signature: "Alex Brush", cursive;
+  --font-label: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --color-snowfall: #ebe6e1;
+  --color-dark-night: #595450;
+  --color-temple-grey: #c5c0bc;
+  --color-roasted-cashew: #96857b;
+  --color-frozen-dew: #dccfb8;
 }
 
 html {
@@ -12,8 +20,8 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-zinc-900);
-  color: var(--color-zinc-100);
+  background-color: var(--color-snowfall);
+  color: var(--color-dark-night);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,29 +29,29 @@ body {
 }
 
 ::selection {
-  background: var(--color-stone-400);
-  color: var(--color-zinc-900);
+  background: var(--color-frozen-dew);
+  color: var(--color-dark-night);
 }
 
-/* Slim, quiet scrollbar to match the minimalist palette */
+/* Slim, quiet scrollbar to match the editorial palette */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-zinc-900);
+  background: var(--color-snowfall);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-zinc-700);
+  background: color-mix(in srgb, var(--color-dark-night) 20%, transparent);
   border-radius: 9999px;
 }
 
-/* Subtle grain texture applied over the entire viewport for tactile depth */
+/* Subtle grain texture applied over the entire viewport for a printed-paper feel */
 .bg-noise {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

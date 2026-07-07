@@ -4,7 +4,29 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(git stash *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(curl -s http://localhost:5173/src/index.css --max-time 5)",
+      "Bash(curl -s http://localhost:5173/ --max-time 5)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(node -e \"console.log\\(require.resolve\\('playwright'\\)\\)\")",
+      "Bash(mkdir -p /tmp/shots)",
+      "Bash(npx playwright *)",
+      "Bash(npm init *)",
+      "Bash(git mv *)",
+      "Skill(run)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(npm ls *)",
+      "Bash(node drive.mjs)",
+      "Bash(NODE_PATH=\"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules\" node --experimental-vm-modules -e \"console.log\\('test'\\)\")",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\modis\\\\AppData\\\\Local\\\\npm-cache\\\\_npx\\\\e41f203b7505f1fb\\\\node_modules\" node \"C:/Users/modis/AppData/Local/Temp/claude/E--portfolio/580c3479-29be-42e1-a2fd-45009d090fd4/scratchpad/drive.mjs\")",
+      "Bash(cp C:/Users/modis/AppData/Local/Temp/claude/E--portfolio/580c3479-29be-42e1-a2fd-45009d090fd4/scratchpad/drive.mjs /c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/drive.mjs)",
+      "Bash(node /c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/drive.mjs)",
+      "Bash(curl -sI http://localhost:5173/logos/cornell.png)",
+      "Bash(node *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(rm -f \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/drive.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/check-logo.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/zoom-logo.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/scroll-journey.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/reshot-home.mjs\")"
     ]
   }
 }

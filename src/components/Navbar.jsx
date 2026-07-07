@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { navData } from "../data/contentData";
+import { navData, siteMeta } from "../data/contentData";
 
 function ChevronIcon({ open }) {
   return (
@@ -12,6 +12,46 @@ function ChevronIcon({ open }) {
     >
       <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="1.5" />
+      <path d="M3.5 6.5L12 13L20.5 6.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function UtilityStrip() {
+  return (
+    <div className="flex w-full items-center gap-4 border-b border-temple-grey/60 px-6 py-1.5 text-roasted-cashew md:px-10">
+      <a
+        href={siteMeta.linkedinHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
+        className="transition-colors duration-200 hover:text-dark-night"
+      >
+        <LinkedInIcon />
+      </a>
+      <a
+        href={`mailto:${siteMeta.email}`}
+        aria-label="Email"
+        className="transition-colors duration-200 hover:text-dark-night"
+      >
+        <MailIcon />
+      </a>
+    </div>
   );
 }
 
@@ -33,7 +73,7 @@ function DesktopDropdown({ label, items }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-1.5 text-sm tracking-wide text-stone-400 transition-colors duration-200 hover:text-zinc-100"
+        className="flex items-center gap-1.5 text-sm tracking-wide text-dark-night/70 transition-colors duration-200 hover:text-dark-night"
       >
         {label}
         <ChevronIcon open={open} />
@@ -43,12 +83,12 @@ function DesktopDropdown({ label, items }) {
           open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
         }`}
       >
-        <div className="min-w-56 border border-zinc-800 bg-zinc-900/98 py-2 shadow-2xl shadow-black/40 backdrop-blur">
+        <div className="min-w-56 border border-temple-grey bg-snowfall py-2 shadow-xl shadow-dark-night/10">
           {items.map((item) => (
             <Link
               key={item.label}
               to={item.to}
-              className="block px-5 py-2.5 text-sm text-stone-400 transition-colors duration-150 hover:bg-zinc-800/60 hover:text-zinc-100"
+              className="block px-5 py-2.5 font-label text-sm font-light tracking-wide text-dark-night/70 transition-colors duration-150 hover:bg-frozen-dew/40 hover:text-dark-night"
             >
               {item.label}
             </Link>
@@ -62,12 +102,12 @@ function DesktopDropdown({ label, items }) {
 function MobileAccordion({ label, items, onNavigate }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-zinc-800/70">
+    <div className="border-b border-temple-grey/60">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-left text-base text-stone-300"
+        className="flex w-full items-center justify-between py-4 text-left text-base text-dark-night"
       >
         {label}
         <ChevronIcon open={open} />
@@ -79,7 +119,7 @@ function MobileAccordion({ label, items, onNavigate }) {
               key={item.label}
               to={item.to}
               onClick={onNavigate}
-              className="block py-2 pl-4 text-sm text-stone-500 transition-colors duration-150 hover:text-zinc-100"
+              className="block py-2 pl-4 font-label text-sm font-light tracking-wide text-dark-night/70 transition-colors duration-150 hover:text-dark-night"
             >
               {item.label}
             </Link>
@@ -107,15 +147,17 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     `text-sm tracking-wide transition-colors duration-200 ${
-      isActive ? "text-zinc-100" : "text-stone-400 hover:text-zinc-100"
+      isActive ? "text-dark-night" : "text-dark-night/70 hover:text-dark-night"
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/70 bg-zinc-900/90 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
+    <header className="sticky top-0 z-50 w-full border-b border-temple-grey bg-snowfall/95 backdrop-blur-md">
+      <UtilityStrip />
+
+      <nav className="flex h-20 w-full items-center justify-between px-6 md:px-10">
         <Link
           to={navData.brand.to}
-          className="font-serif text-lg font-bold tracking-wide text-zinc-100 transition-all duration-200 hover:text-stone-300 hover:tracking-wider"
+          className="font-cursive text-4xl leading-none text-dark-night transition-opacity duration-200 hover:opacity-70 md:text-5xl"
         >
           {navData.brand.label}
         </Link>
@@ -134,7 +176,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-stone-400/70 px-4 py-1.5 text-sm tracking-wide text-stone-300 opacity-70 transition-all duration-200 hover:border-zinc-100 hover:bg-zinc-100 hover:text-zinc-900 hover:opacity-100"
+            className="border border-dark-night/30 px-4 py-1.5 text-sm tracking-wide text-dark-night opacity-70 transition-all duration-200 hover:border-dark-night hover:bg-dark-night hover:text-snowfall hover:opacity-100"
           >
             {navData.resume.label}
           </a>
@@ -149,12 +191,12 @@ export default function Navbar() {
           className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
-            className={`h-px w-6 bg-zinc-100 transition-transform duration-200 ${
+            className={`h-px w-6 bg-dark-night transition-transform duration-200 ${
               mobileOpen ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-6 bg-zinc-100 transition-transform duration-200 ${
+            className={`h-px w-6 bg-dark-night transition-transform duration-200 ${
               mobileOpen ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
@@ -163,7 +205,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       <div
-        className={`overflow-y-auto border-t border-zinc-800/70 bg-zinc-900 transition-all duration-300 md:hidden ${
+        className={`overflow-y-auto border-t border-temple-grey bg-snowfall transition-all duration-300 md:hidden ${
           mobileOpen ? "max-h-[calc(100svh-4rem)] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -172,7 +214,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="border-b border-zinc-800/70 py-4 text-base text-stone-300"
+              className="border-b border-temple-grey/60 py-4 text-base text-dark-night"
             >
               {link.label}
             </Link>
@@ -184,7 +226,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="my-6 border border-stone-400/70 py-3 text-center text-sm tracking-wide text-stone-300 opacity-70"
+            className="my-6 border border-dark-night/30 py-3 text-center text-sm tracking-wide text-dark-night opacity-70"
           >
             {navData.resume.label}
           </a>

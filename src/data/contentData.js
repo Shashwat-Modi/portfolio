@@ -5,12 +5,13 @@ export const siteMeta = {
   name: "Shashwat Modi",
   role: "Data Scientist",
   resumeHref: "/shashwat_modi_resume.pdf",
+  linkedinHref: "https://www.linkedin.com/in/shashwatmodi/",
+  email: "modishashwat13@gmail.com",
 };
 
 export const navData = {
-  brand: { label: "Shashwat Modi", to: "/" },
+  brand: { label: "Shashwat", to: "/" },
   links: [
-    { label: "Experience", to: "/experience" },
     { label: "Projects", to: "/projects" },
     { label: "Journey", to: "/journey" },
   ],
@@ -37,6 +38,15 @@ export const navData = {
         { label: "Bughouse Chess", to: "/compiling" },
       ],
     },
+    {
+      label: "My Library",
+      items: [
+        { label: "Currently Reading", to: "/library" },
+        { label: "Data & Statistics", to: "/library" },
+        { label: "Strategy & Business", to: "/library" },
+        { label: "Fiction Shelf", to: "/library" },
+      ],
+    },
   ],
   resume: { label: "Resume", href: siteMeta.resumeHref },
 };
@@ -47,7 +57,8 @@ export const homeData = {
     "I am a data scientist who believes data tells a story, and I like to make sure it’s a good one. Having recently completed my Master’s in Data Science and Applied Statistics from Cornell University, I specialize in turning complex datasets into actionable, real-world strategies. I don’t just look for patterns in numbers; I look for the narrative that drives growth.",
     "Whether I’m tuning machine learning models, optimizing corporate workflows, or tinkering with my instruments and culinary experiments over the weekend, I am obsessed with finding the ‘why’ behind the what. I believe life—and data—is better when you find the perfect balance of sweet, sour, and spicy.",
   ],
-  signOff: "Yours with 95% confidence, Shashwat",
+  signOffLine: "Yours with 95% confidence,",
+  signatureName: "Shashwat Modi",
 };
 
 export const experienceData = [
@@ -58,6 +69,8 @@ export const experienceData = [
     timestamp: "2025 — 2026",
     description:
       "Served as primary academic resource for NBA 6215, translating complex technical concepts into business frameworks.",
+    image:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "emcure",
@@ -66,6 +79,8 @@ export const experienceData = [
     timestamp: "2024",
     description:
       "Spearheaded a Six Sigma DMEDI framework. Built automated data workflows that slashed manual processing time by 80%. Engineered Python-based SARIMA models to forecast trends across 1,900+ subgroups.",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "icici",
@@ -74,6 +89,8 @@ export const experienceData = [
     timestamp: "2023",
     description:
       "Executed end-to-end opportunity estimation for NRI ecosystem growth via demographic data scraping. Engineered regression models (R² = 0.87) mapping affluence patterns to back geographic expansions with hard evidence.",
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "ey",
@@ -82,6 +99,8 @@ export const experienceData = [
     timestamp: "2022",
     description:
       "Executed insurance claims analytics through Python-driven exploratory data analysis and multivariate regression modeling.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
   },
 ];
 
@@ -92,6 +111,8 @@ export const projectsData = [
     description:
       "Engineered a LightGBM regression model with strict GroupKFold cross-validation to forecast sailor fatigue 30 minutes in advance (0.34 RMSE). Built a 3.7 In_rmssd ‘Soft Margin’ dashboard early-warning buffer — the same logic as Popeye reaching for spinach before Bluto lands the blow: the model spots the dip before fatigue actually hits.",
     metric: "0.34 RMSE",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "fraud-diamond",
@@ -99,6 +120,8 @@ export const projectsData = [
     description:
       "Authored a socio-technical analysis examining 3 major Indian financial frauds (1992–2018) employing the Fraud Diamond Model. Published in Springer Proceedings in Business and Economics.",
     metric: "Springer",
+    image:
+      "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "sarima-market",
@@ -106,6 +129,8 @@ export const projectsData = [
     description:
       "Developed a Python-based SARIMA model to project sales performance across 1,900+ product subgroups, linking prescription patterns to revenue outcomes.",
     metric: "1,900+ subgroups",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "nri-mapping",
@@ -113,6 +138,8 @@ export const projectsData = [
     description:
       "Built a robust regression model (R² = 0.87) utilizing multi-source demographic data scraping to map international banking expansion.",
     metric: "R² = 0.87",
+    image:
+      "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "tap-sustainability",
@@ -120,6 +147,8 @@ export const projectsData = [
     description:
       "Analyzed washroom tap data utilizing statistical sampling distributions. Uncovered an alarming 33% waste rate (120 kilolitres monthly) to drive conservation awareness.",
     metric: "33% waste",
+    image:
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "aviation-forecasting",
@@ -127,6 +156,8 @@ export const projectsData = [
     description:
       "Employed ARIMA, SARIMA, and Prophet models to study post-Covid-19 aviation recovery. Double-shortlisted for the NMIMS REL Poster Symposium.",
     metric: "Double-shortlisted",
+    image:
+      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "sql-architecture",
@@ -134,6 +165,8 @@ export const projectsData = [
     description:
       "Constructed a streamlined SQL database for college administration, successfully addressing and eliminating redundant Excel workflows.",
     metric: "0 spreadsheets",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
   },
 ];
 
@@ -143,6 +176,7 @@ export const journeyData = [
     title: "Cornell University",
     byline: "Master's in Data Science and Applied Statistics",
     tier: "primary",
+    logoFile: "cornell.png",
     description: "Honored with the Capstone Leadership Award. More importantly, this was a period of deep academic collaboration. Served as a Course Assistant for NBA 6215 under [Professor Name] and mentored junior researchers like 'M' in advanced data pipelines, learning as much from them as I taught."
   },
   {
@@ -164,6 +198,7 @@ export const journeyData = [
     title: "NMIMS (Narsee Monjee Institute of Management Studies)",
     byline: "B.Sc. Applied Statistics & Analytics",
     tier: "primary",
+    logoFile: "nmims.jpg",
     description: "Three years that turned potential into leadership, heavily influenced by mentors like [Name]. As President of the Placement Cell, I spearheaded 'Extempore', and as a Founding Member of the Research Cell, led a 50-student team for an inter-college symposium."
   },
   {
@@ -171,6 +206,7 @@ export const journeyData = [
     title: "Asian Academy of Film and Television (AAFT)",
     byline: "Music Production Diploma",
     tier: "tertiary",
+    logoFile: "aaft.jpg",
     description: "A necessary step outside the spreadsheet. Exploring craft, rhythm, and creativity on its own terms under the guidance of [Instructor/Peer Name]."
   },
   {
@@ -227,6 +263,7 @@ export const journeyData = [
     title: "Navy Children School",
     byline: "Higher Secondary Education",
     tier: "primary",
+    logoFile: "ncs.jpg",
     description: "Crucial years of academic transition and adaptability, refining the analytical focus required for advanced statistical sciences, championed by teachers like [Name]."
   },
   {
@@ -234,6 +271,7 @@ export const journeyData = [
     title: "The Cathedral and John Connon School",
     byline: "Primary & Secondary Education",
     tier: "primary",
+    logoFile: "cajcs.png",
     description: "Eleven years of foundation — where curiosity was first encouraged to wander. Deeply grateful to educators like [Name] who shaped my earliest habits of inquiry."
   },
   {
@@ -248,6 +286,7 @@ export const journeyData = [
     title: "The Cathedral and John Connon School",
     byline: "House Captain (7th Grade)",
     tier: "tertiary",
+    logoFile: "cajcs.png",
     description: "An early introduction to team leadership and responsibility, setting the stage for future operational roles."
   },
   {
@@ -262,4 +301,14 @@ export const journeyData = [
 export const compilingPageData = {
   heading: "Still Compiling…",
   message: "Pulling source data into the workspace. Check back soon.",
+};
+
+export const libraryPageData = {
+  heading: "Currently editing…",
+  message: "Under editorial review. This shelf is being annotated before it goes to print.",
+  metrics: [
+    { label: "Volumes catalogued", value: "12" },
+    { label: "Pages annotated", value: "1,840" },
+    { label: "Marginalia", value: "236 notes" },
+  ],
 };
