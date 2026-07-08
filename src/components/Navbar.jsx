@@ -58,10 +58,6 @@ function UtilityStrip() {
 function DesktopDropdown({ label, items }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef(null);
-  const itemFontClass =
-    label === "My Library"
-      ? "font-label font-light tracking-wide"
-      : "font-serif font-medium tracking-normal";
 
   const handleEnter = () => {
     clearTimeout(closeTimer.current);
@@ -77,7 +73,7 @@ function DesktopDropdown({ label, items }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-1.5 text-sm tracking-wide text-dark-night/70 transition-colors duration-200 hover:text-dark-night"
+        className="flex items-center gap-1.5 text-base font-medium tracking-wide text-dark-night/70 transition-colors duration-200 hover:text-dark-night"
       >
         {label}
         <ChevronIcon open={open} />
@@ -92,7 +88,7 @@ function DesktopDropdown({ label, items }) {
             <Link
               key={item.label}
               to={item.to}
-              className={`block px-5 py-2.5 text-sm text-dark-night/70 transition-colors duration-150 hover:bg-frozen-dew/40 hover:text-dark-night ${itemFontClass}`}
+              className="block px-5 py-2.5 font-serif text-base font-medium tracking-normal text-dark-night/70 transition-colors duration-150 hover:bg-frozen-dew/40 hover:text-dark-night"
             >
               {item.label}
             </Link>
@@ -105,10 +101,6 @@ function DesktopDropdown({ label, items }) {
 
 function MobileAccordion({ label, items, onNavigate }) {
   const [open, setOpen] = useState(false);
-  const itemFontClass =
-    label === "My Library"
-      ? "font-label font-light tracking-wide"
-      : "font-serif font-medium tracking-normal";
 
   return (
     <div className="border-b border-temple-grey/60">
@@ -116,7 +108,7 @@ function MobileAccordion({ label, items, onNavigate }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-left text-base text-dark-night"
+        className="flex w-full items-center justify-between py-4 text-left text-base font-medium tracking-wide text-dark-night"
       >
         {label}
         <ChevronIcon open={open} />
@@ -128,7 +120,7 @@ function MobileAccordion({ label, items, onNavigate }) {
               key={item.label}
               to={item.to}
               onClick={onNavigate}
-              className={`block py-2 pl-4 text-sm text-dark-night/70 transition-colors duration-150 hover:text-dark-night ${itemFontClass}`}
+              className="block py-2 pl-4 font-serif text-base font-medium tracking-normal text-dark-night/70 transition-colors duration-150 hover:text-dark-night"
             >
               {item.label}
             </Link>
@@ -155,7 +147,7 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const linkClass = ({ isActive }) =>
-    `text-sm tracking-wide transition-colors duration-200 ${
+    `text-base font-medium tracking-wide transition-colors duration-200 ${
       isActive ? "text-dark-night" : "text-dark-night/70 hover:text-dark-night"
     }`;
 
@@ -185,7 +177,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-dark-night/30 px-4 py-1.5 text-sm tracking-wide text-dark-night opacity-70 transition-all duration-200 hover:border-dark-night hover:bg-dark-night hover:text-snowfall hover:opacity-100"
+            className="border border-dark-night/30 px-4 py-1.5 text-base font-medium tracking-wide text-dark-night opacity-70 transition-all duration-200 hover:border-dark-night hover:bg-dark-night hover:text-snowfall hover:opacity-100"
           >
             {navData.resume.label}
           </a>
@@ -223,7 +215,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="border-b border-temple-grey/60 py-4 text-base text-dark-night"
+              className="border-b border-temple-grey/60 py-4 text-base font-medium tracking-wide text-dark-night"
             >
               {link.label}
             </Link>
@@ -235,7 +227,7 @@ export default function Navbar() {
             href={navData.resume.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="my-6 border border-dark-night/30 py-3 text-center text-sm tracking-wide text-dark-night opacity-70"
+            className="my-6 border border-dark-night/30 py-3 text-center text-base font-medium tracking-wide text-dark-night opacity-70"
           >
             {navData.resume.label}
           </a>

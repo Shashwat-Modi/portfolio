@@ -31,7 +31,7 @@ export default function Layout() {
         </main>
         {location.pathname !== "/" && (
           <footer className="border-t border-temple-grey px-6 py-8 text-center font-label text-xs font-light tracking-wide text-charcoal md:px-10">
-            © {new Date().getFullYear()} Shashwat Modi
+            © <span className="font-oldstyle-nums font-serif font-bold">{new Date().getFullYear()}</span> Shashwat Modi
           </footer>
         )}
       </div>

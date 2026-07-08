@@ -2,15 +2,15 @@ import { homeData } from "../data/contentData";
 
 export default function Home() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Full-width silhouette watermark backdrop */}
+    <section className="relative overflow-hidden bg-snowfall">
+      {/* Full-bleed silhouette backdrop at rich, deep opacity */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/hero-silhouette.jpg')" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-snowfall/20" aria-hidden="true" />
-      {/* Extra scrim behind the letter text so it stays legible over the portrait */}
+      {/* Soft horizontal scrim: pure Snowfall behind the letter column, easing
+          into the portrait's native tones toward the right edge */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-snowfall via-snowfall/80 to-transparent md:via-45% md:to-70%"
         aria-hidden="true"
@@ -24,13 +24,13 @@ export default function Home() {
 
           <div className="mt-5 space-y-3">
             {homeData.paragraphs.map((paragraph, i) => (
-              <p key={i} className="font-serif text-base leading-relaxed text-dark-night/80">
+              <p key={i} className="font-serif text-lg font-medium leading-relaxed text-dark-night/80">
                 {paragraph}
               </p>
             ))}
           </div>
 
-          <p className="mt-8 font-serif text-lg leading-relaxed text-dark-night/80 md:text-xl">
+          <p className="mt-8 font-serif text-lg font-medium leading-relaxed text-dark-night/80 md:text-xl">
             {homeData.signOffLine}
           </p>
           <p className="mt-4 font-signature text-4xl leading-none text-dark-night md:mt-6 md:text-5xl">

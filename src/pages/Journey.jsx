@@ -59,7 +59,7 @@ function TimelineRow({ node }) {
 
       {/* Column 3: entry details */}
       <div className="pb-4">
-        <p className="font-serif text-xs uppercase tracking-[0.3em] text-charcoal md:text-sm">
+        <p className="font-oldstyle-nums font-serif text-xs font-bold uppercase tracking-[0.3em] text-charcoal md:text-sm">
           {node.date}
         </p>
         <h2 className={`mt-3 font-serif text-dark-night ${tierTitleClass[node.tier]}`}>

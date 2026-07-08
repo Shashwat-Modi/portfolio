@@ -47,6 +47,11 @@ body {
   border-radius: 9999px;
 }
 
+/* Elegant lining-restored oldstyle figures for statistic/numeral displays */
+.font-oldstyle-nums {
+  font-variant-numeric: oldstyle-nums tabular-nums;
+}
+
 /* Subtle grain texture applied over the entire viewport for a printed-paper feel */
 .bg-noise {
   position: fixed;
