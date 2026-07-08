@@ -142,7 +142,11 @@ export const journeyData = [
     ],
     tier: "primary",
     logoFile: "cornell.png",
-    description: "Honored with the Capstone Leadership Award. More importantly, this was a period of deep academic collaboration. Served as a Course Assistant for NBA 6215 under [Professor Name] and mentored junior researchers like 'M' in advanced data pipelines, learning as much from them as I taught."
+    description: [
+      "More than the technical frameworks, this year was defined by a profound sense of academic community and the opportunity to learn alongside a truly international collective of minds. It was a space where rigorous methodology met genuine curiosity—whether diving into deep learning research with Professor Kilian Weinberger, debating puzzles and paradoxes in philosophy seminars, or looking at global development metrics at the UN HDI office in New York City with Dr. Kaushik Basu. Each of these educators left an indelible mark on my journey, completely reframing how I approach data. I still think back to the brilliant intuition of Professor Melissa Smith using a blind chocolate tasting to ground Fisher’s Exact Test, and the guidance of Professor Ahmed El Alaoui, who connected with me deeply as a mentor while navigating the complexities of building our predictive models for competitive sailing. That intellectual curiosity frequently pulled me outside the classroom, even extending to a brief trip to San Francisco, where the windy streets and billboards advertising AI models over fashion felt like a glimpse into a changing world.",
+      "Living in Ithaca also meant embracing a completely new physical rhythm. It meant learning how to trudge up steep, snow-covered hills while navigating the quiet hazard of black ice to make an early lecture, balanced by the pure joy of sledding down Libe Slope or driving through the sweeping landscapes of upstate New York with friends. I found myself constantly stepping outside my comfort zone—getting belay certified at the climbing wall, picking up Ultimate Frisbee to represent the university at tournaments, performing with the South Asian Music Society, and even testing my nerves with a stand-up comedy set for the first time in front of a small audience.",
+      "It was a period of deep collaboration and personal growth, shaped by mentors and peers who taught me that the truest value of data lies in the human perspectives it helps us understand."
+    ]
   },
   {
     date: "Dec 2025",

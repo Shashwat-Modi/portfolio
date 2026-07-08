@@ -75,9 +75,15 @@ function TimelineRow({ node }) {
             ))}
           </ul>
         )}
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-dark-night">
-          {node.description}
-        </p>
+        {Array.isArray(node.description) ? (
+          <div className="space-y-4">
+            {node.description.map((paragraph, pIdx) => (
+              <p key={pIdx} className="text-[#595450]/90 text-sm md:text-base font-normal leading-relaxed text-justify">{paragraph}</p>
+            ))}
+          </div>
+        ) : (
+          <p className="text-[#595450]/90 text-sm md:text-base font-normal leading-relaxed text-justify">{node.description}</p>
+        )}
       </div>
     </motion.div>
   );
