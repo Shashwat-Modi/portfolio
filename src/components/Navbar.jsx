@@ -34,7 +34,7 @@ function MailIcon() {
 
 function UtilityStrip() {
   return (
-    <div className="flex w-full items-center gap-4 border-b border-temple-grey/60 px-6 py-1.5 text-roasted-cashew md:px-10">
+    <div className="flex w-full items-center gap-4 border-b border-temple-grey/60 px-6 py-1.5 text-charcoal md:px-10">
       <a
         href={siteMeta.linkedinHref}
         target="_blank"
@@ -58,6 +58,10 @@ function UtilityStrip() {
 function DesktopDropdown({ label, items }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef(null);
+  const itemFontClass =
+    label === "My Library"
+      ? "font-label font-light tracking-wide"
+      : "font-serif font-medium tracking-normal";
 
   const handleEnter = () => {
     clearTimeout(closeTimer.current);
@@ -88,7 +92,7 @@ function DesktopDropdown({ label, items }) {
             <Link
               key={item.label}
               to={item.to}
-              className="block px-5 py-2.5 font-label text-sm font-light tracking-wide text-dark-night/70 transition-colors duration-150 hover:bg-frozen-dew/40 hover:text-dark-night"
+              className={`block px-5 py-2.5 text-sm text-dark-night/70 transition-colors duration-150 hover:bg-frozen-dew/40 hover:text-dark-night ${itemFontClass}`}
             >
               {item.label}
             </Link>
@@ -101,6 +105,11 @@ function DesktopDropdown({ label, items }) {
 
 function MobileAccordion({ label, items, onNavigate }) {
   const [open, setOpen] = useState(false);
+  const itemFontClass =
+    label === "My Library"
+      ? "font-label font-light tracking-wide"
+      : "font-serif font-medium tracking-normal";
+
   return (
     <div className="border-b border-temple-grey/60">
       <button
@@ -119,7 +128,7 @@ function MobileAccordion({ label, items, onNavigate }) {
               key={item.label}
               to={item.to}
               onClick={onNavigate}
-              className="block py-2 pl-4 font-label text-sm font-light tracking-wide text-dark-night/70 transition-colors duration-150 hover:text-dark-night"
+              className={`block py-2 pl-4 text-sm text-dark-night/70 transition-colors duration-150 hover:text-dark-night ${itemFontClass}`}
             >
               {item.label}
             </Link>
@@ -157,7 +166,7 @@ export default function Navbar() {
       <nav className="flex h-20 w-full items-center justify-between px-6 md:px-10">
         <Link
           to={navData.brand.to}
-          className="font-cursive text-4xl leading-none text-dark-night transition-opacity duration-200 hover:opacity-70 md:text-5xl"
+          className="font-cursive text-4xl leading-none tracking-normal text-dark-night transition-all duration-500 hover:tracking-wide hover:opacity-70 md:text-5xl"
         >
           {navData.brand.label}
         </Link>

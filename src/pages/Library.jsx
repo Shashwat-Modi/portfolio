@@ -3,7 +3,7 @@ import { libraryPageData } from "../data/contentData";
 export default function Library() {
   return (
     <section className="mx-auto flex min-h-[60vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
-      <p className="font-serif text-xs uppercase tracking-[0.3em] text-roasted-cashew">
+      <p className="font-serif text-xs uppercase tracking-[0.3em] text-charcoal">
         Under editorial review
       </p>
       <h1 className="mt-3 font-serif text-3xl text-dark-night sm:text-4xl">{libraryPageData.heading}</h1>
@@ -13,7 +13,7 @@ export default function Library() {
         {libraryPageData.metrics.map((metric) => (
           <div key={metric.label} className="flex flex-col items-center gap-1.5">
             <span className="font-label text-2xl font-light text-dark-night">{metric.value}</span>
-            <span className="font-label text-xs font-light uppercase tracking-[0.2em] text-roasted-cashew">{metric.label}</span>
+            <span className="font-label text-xs font-light uppercase tracking-[0.2em] text-charcoal">{metric.label}</span>
           </div>
         ))}
       </div>

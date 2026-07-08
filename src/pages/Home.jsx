@@ -33,7 +33,7 @@ export default function Home() {
           <p className="mt-8 font-serif text-lg leading-relaxed text-dark-night/80 md:text-xl">
             {homeData.signOffLine}
           </p>
-          <p className="font-signature text-4xl leading-none text-dark-night md:text-5xl">
+          <p className="mt-4 font-signature text-4xl leading-none text-dark-night md:mt-6 md:text-5xl">
             {homeData.signatureName}
           </p>
         </div>

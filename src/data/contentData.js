@@ -12,8 +12,8 @@ export const siteMeta = {
 export const navData = {
   brand: { label: "Shashwat", to: "/" },
   links: [
-    { label: "Projects", to: "/projects" },
     { label: "Journey", to: "/journey" },
+    { label: "Projects", to: "/projects" },
   ],
   dropdowns: [
     {

@@ -54,13 +54,13 @@ export default function Chatbot() {
             <div className="flex items-center justify-between border-b border-temple-grey px-5 py-4">
               <div>
                 <p className="font-serif text-sm font-semibold text-snowfall">Shashwat's AI Persona</p>
-                <p className="text-xs text-temple-grey">Gemini-powered · placeholder mode</p>
+                <p className="text-xs font-medium text-snowfall/70">Gemini-powered · placeholder mode</p>
               </div>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close chat"
-                className="text-temple-grey transition-colors hover:text-snowfall"
+                className="text-snowfall/70 transition-colors hover:text-snowfall"
               >
                 ✕
               </button>
@@ -70,7 +70,7 @@ export default function Chatbot() {
               {messages.map((m, i) => (
                 <div
                   key={i}
-                  className={`max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm leading-relaxed ${
+                  className={`max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm font-medium leading-relaxed ${
                     m.role === "user" ? "ml-auto bg-frozen-dew text-dark-night" : "bg-snowfall/10 text-snowfall"
                   }`}
                 >
@@ -78,7 +78,7 @@ export default function Chatbot() {
                 </div>
               ))}
               {loading && (
-                <div className="max-w-[85%] rounded-xl bg-snowfall/10 px-3.5 py-2.5 text-sm text-temple-grey">
+                <div className="max-w-[85%] rounded-xl bg-snowfall/10 px-3.5 py-2.5 text-sm font-medium text-snowfall/70">
                   Thinking…
                 </div>
               )}
@@ -90,12 +90,12 @@ export default function Chatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask something…"
-                className="flex-1 rounded-full border border-temple-grey bg-dark-night px-4 py-2 text-sm text-snowfall placeholder:text-temple-grey focus:border-frozen-dew focus:outline-none"
+                className="flex-1 rounded-full border border-temple-grey bg-dark-night px-4 py-2 text-sm font-medium text-snowfall placeholder:text-snowfall/50 focus:border-frozen-dew focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={loading || !input.trim()}
-                className="rounded-full bg-frozen-dew px-4 py-2 text-sm text-dark-night transition-opacity disabled:opacity-40"
+                className="rounded-full bg-frozen-dew px-4 py-2 text-sm font-semibold text-dark-night transition-opacity disabled:opacity-40"
               >
                 Send
               </button>

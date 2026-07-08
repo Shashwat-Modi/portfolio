@@ -30,7 +30,7 @@ export default function Layout() {
           </AnimatePresence>
         </main>
         {location.pathname !== "/" && (
-          <footer className="border-t border-temple-grey px-6 py-8 text-center font-label text-xs font-light tracking-wide text-roasted-cashew md:px-10">
+          <footer className="border-t border-temple-grey px-6 py-8 text-center font-label text-xs font-light tracking-wide text-charcoal md:px-10">
             © {new Date().getFullYear()} Shashwat Modi
           </footer>
         )}

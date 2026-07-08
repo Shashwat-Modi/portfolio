@@ -59,16 +59,16 @@ function TimelineRow({ node }) {
 
       {/* Column 3: entry details */}
       <div className="pb-4">
-        <p className="font-serif text-xs uppercase tracking-[0.3em] text-roasted-cashew md:text-sm">
+        <p className="font-serif text-xs uppercase tracking-[0.3em] text-charcoal md:text-sm">
           {node.date}
         </p>
         <h2 className={`mt-3 font-serif text-dark-night ${tierTitleClass[node.tier]}`}>
           {node.title}
         </h2>
-        <p className="mt-1.5 text-sm uppercase tracking-[0.2em] text-roasted-cashew">
+        <p className="mt-1.5 text-sm uppercase tracking-[0.2em] text-charcoal">
           {node.byline}
         </p>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-dark-night/80">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-dark-night">
           {node.description}
         </p>
       </div>

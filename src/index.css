@@ -12,6 +12,7 @@
   --color-temple-grey: #c5c0bc;
   --color-roasted-cashew: #96857b;
   --color-frozen-dew: #dccfb8;
+  --color-charcoal: #2f2b28;
 }
 
 html {
@@ -22,6 +23,7 @@ body {
   margin: 0;
   background-color: var(--color-snowfall);
   color: var(--color-dark-night);
+  font-weight: 500;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
