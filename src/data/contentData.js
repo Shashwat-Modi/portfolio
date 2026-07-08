@@ -32,15 +32,15 @@ export const navData = {
     {
       label: "My Scrapbook",
       items: [
-        { label: "Music & Acapella Mashups", to: "/compiling" },
+        { label: "Music & Mashups", to: "/compiling" },
         { label: "Formula 1", to: "/compiling" },
         { label: "Martial Arts", to: "/compiling" },
         { label: "Basketball", to: "/compiling" },
         { label: "Coffee", to: "/compiling" },
-        { label: "Travels", to: "/compiling" },
+        { label: "Travel", to: "/compiling" },
         { label: "Food", to: "/compiling" },
         { label: "Bughouse Chess", to: "/compiling" },
-      ],
+      ].sort((a, b) => a.label.localeCompare(b.label)),
     },
     {
       label: "My Library",
@@ -132,10 +132,14 @@ export const projectsData = [
 ];
 
 export const journeyData = [
-  {
+  { 
     date: "Aug 2025 — May 2026",
     title: "Cornell University",
     byline: "Master's in Data Science and Applied Statistics",
+    achievements: [
+      "Awarded the Capstone Leadership Award",
+      "Served as a Course Assistant under Professor James Minas translating python concepts for business students",
+    ],
     tier: "primary",
     logoFile: "cornell.png",
     description: "Honored with the Capstone Leadership Award. More importantly, this was a period of deep academic collaboration. Served as a Course Assistant for NBA 6215 under [Professor Name] and mentored junior researchers like 'M' in advanced data pipelines, learning as much from them as I taught."
@@ -243,12 +247,12 @@ export const journeyData = [
     description: "A testament to years of technical discipline and musicality. Deepest gratitude to my teachers, Leon DSouza and Charmis Braganza, for guiding this journey."
   },
   {
-    date: "2013 — 2014",
+    date: "2011 — 2014",
     title: "The Cathedral and John Connon School",
-    byline: "House Captain (7th Grade)",
+    byline: "Best Student (Middle School)",
     tier: "tertiary",
     logoFile: "cajcs.png",
-    description: "An early introduction to team leadership and responsibility, setting the stage for future operational roles."
+    description: "An early introduction to team leadership and responsibility, recognition for academic as well as holistic growth and excellence. This recognition set the stage for future leadership pursuits."
   },
   {
     date: "The Beginning",

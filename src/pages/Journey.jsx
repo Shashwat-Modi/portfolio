@@ -68,6 +68,13 @@ function TimelineRow({ node }) {
         <p className="mt-1.5 text-sm uppercase tracking-[0.2em] text-charcoal">
           {node.byline}
         </p>
+        {node.achievements && node.achievements.length > 0 && (
+          <ul className="list-disc pl-5 my-4 space-y-2 text-[#595450]/90">
+            {node.achievements.map((bullet, idx) => (
+              <li key={idx} className="tracking-normal text-sm md:text-base font-normal leading-relaxed">{bullet}</li>
+            ))}
+          </ul>
+        )}
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-dark-night">
           {node.description}
         </p>
