@@ -1,8 +1,8 @@
-// Thin client for the floating chatbot. Point GEMINI_API_KEY at a Google AI
-// Studio key (via VITE_GEMINI_API_KEY) to switch from canned responses to
-// live Gemini calls — no other wiring required.
+// Structural client for the Gemini API. Reads VITE_GEMINI_API_KEY from the
+// local .env file — set it to a Google AI Studio key to switch the chatbot
+// from canned placeholder responses to live Gemini calls. No other wiring
+// required.
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
@@ -14,6 +14,10 @@ const PLACEHOLDER_RESPONSES = [
   "Good question. For now I can only offer a scripted response, but ask me about his Cornell work, the fatigue-modeling project, or his martial arts journey once I'm fully connected.",
   "I'd love to dig into that for you — I just need a Gemini API key from Google AI Studio to move past these canned replies.",
 ];
+
+function getApiKey() {
+  return import.meta.env.VITE_GEMINI_API_KEY;
+}
 
 function hashString(str) {
   let hash = 0;
@@ -29,18 +33,17 @@ function pickPlaceholder(message) {
   return PLACEHOLDER_RESPONSES[index];
 }
 
-export async function askGemini(message) {
-  if (!GEMINI_API_KEY) {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    return pickPlaceholder(message);
-  }
+function buildRequestBody(message) {
+  return {
+    contents: [{ parts: [{ text: `${PERSONA_PROMPT}\n\nVisitor: ${message}` }] }],
+  };
+}
 
-  const response = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
+async function fetchGeminiResponse(message, apiKey) {
+  const response = await fetch(`${GEMINI_ENDPOINT}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: `${PERSONA_PROMPT}\n\nVisitor: ${message}` }] }],
-    }),
+    body: JSON.stringify(buildRequestBody(message)),
   });
 
   if (!response.ok) {
@@ -49,4 +52,15 @@ export async function askGemini(message) {
 
   const data = await response.json();
   return data.candidates?.[0]?.content?.parts?.[0]?.text ?? pickPlaceholder(message);
+}
+
+export async function askGemini(message) {
+  const apiKey = getApiKey();
+
+  if (!apiKey) {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return pickPlaceholder(message);
+  }
+
+  return fetchGeminiResponse(message, apiKey);
 }

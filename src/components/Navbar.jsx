@@ -73,7 +73,7 @@ function DesktopDropdown({ label, items }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-1.5 text-base font-medium tracking-wide text-dark-night/70 transition-colors duration-200 hover:text-dark-night"
+        className="flex items-center gap-1.5 text-base font-semibold tracking-wide text-dark-night transition-opacity duration-200 hover:opacity-80"
       >
         {label}
         <ChevronIcon open={open} />
@@ -108,7 +108,7 @@ function MobileAccordion({ label, items, onNavigate }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-left text-base font-medium tracking-wide text-dark-night"
+        className="flex w-full items-center justify-between py-4 text-left text-base font-semibold tracking-wide text-dark-night"
       >
         {label}
         <ChevronIcon open={open} />
@@ -147,8 +147,8 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const linkClass = ({ isActive }) =>
-    `text-base font-medium tracking-wide transition-colors duration-200 ${
-      isActive ? "text-dark-night" : "text-dark-night/70 hover:text-dark-night"
+    `text-base font-semibold tracking-wide text-dark-night transition-opacity duration-200 ${
+      isActive ? "opacity-100" : "opacity-90 hover:opacity-100"
     }`;
 
   return (
@@ -172,6 +172,11 @@ export default function Navbar() {
           ))}
           {navData.dropdowns.map((dd) => (
             <DesktopDropdown key={dd.label} label={dd.label} items={dd.items} />
+          ))}
+          {navData.trailingLinks.map((link) => (
+            <NavLink key={link.to} to={link.to} className={linkClass}>
+              {link.label}
+            </NavLink>
           ))}
           <a
             href={navData.resume.href}
@@ -215,13 +220,23 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="border-b border-temple-grey/60 py-4 text-base font-medium tracking-wide text-dark-night"
+              className="border-b border-temple-grey/60 py-4 text-base font-semibold tracking-wide text-dark-night"
             >
               {link.label}
             </Link>
           ))}
           {navData.dropdowns.map((dd) => (
             <MobileAccordion key={dd.label} label={dd.label} items={dd.items} onNavigate={() => setMobileOpen(false)} />
+          ))}
+          {navData.trailingLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setMobileOpen(false)}
+              className="border-b border-temple-grey/60 py-4 text-base font-semibold tracking-wide text-dark-night"
+            >
+              {link.label}
+            </Link>
           ))}
           <a
             href={navData.resume.href}

@@ -14,7 +14,11 @@ export const navData = {
   links: [
     { label: "Journey", to: "/journey" },
     { label: "Projects", to: "/projects" },
+    { label: "Contact", to: "/contact" },
   ],
+  // Rendered after the dropdowns, immediately before the Resume CTA — the
+  // last tab-style link in the header.
+  trailingLinks: [{ label: "Your Canvas", to: "/canvas" }],
   dropdowns: [
     {
       label: "My Notebook",
@@ -60,49 +64,6 @@ export const homeData = {
   signOffLine: "Yours with 95% confidence,",
   signatureName: "Shashwat Modi",
 };
-
-export const experienceData = [
-  {
-    id: "cornell-ca",
-    role: "Course Assistant",
-    org: "Cornell University",
-    timestamp: "2025 — 2026",
-    description:
-      "Served as primary academic resource for NBA 6215, translating complex technical concepts into business frameworks.",
-    image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    id: "emcure",
-    role: "Market Research Intern",
-    org: "Emcure Pharmaceuticals",
-    timestamp: "2024",
-    description:
-      "Spearheaded a Six Sigma DMEDI framework. Built automated data workflows that slashed manual processing time by 80%. Engineered Python-based SARIMA models to forecast trends across 1,900+ subgroups.",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    id: "icici",
-    role: "Project Intern",
-    org: "ICICI Bank",
-    timestamp: "2023",
-    description:
-      "Executed end-to-end opportunity estimation for NRI ecosystem growth via demographic data scraping. Engineered regression models (R² = 0.87) mapping affluence patterns to back geographic expansions with hard evidence.",
-    image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    id: "ey",
-    role: "Summer Intern",
-    org: "Ernst & Young",
-    timestamp: "2022",
-    description:
-      "Executed insurance claims analytics through Python-driven exploratory data analysis and multivariate regression modeling.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
-  },
-];
 
 export const projectsData = [
   {
@@ -311,4 +272,15 @@ export const libraryPageData = {
     { label: "Pages annotated", value: "1,840" },
     { label: "Marginalia", value: "236 notes" },
   ],
+};
+
+export const contactPageData = {
+  heading: "Get in Touch",
+  message: "Questions, collaboration ideas, or just want to say hello — the message lands directly in my inbox.",
+};
+
+export const canvasPageData = {
+  heading: "Your Canvas.",
+  message: "An open ledger for collective expressions, stories, and marginalia. Leave your print.",
+  maxAttachmentBytes: 500 * 1024,
 };

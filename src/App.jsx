@@ -5,6 +5,8 @@ import Projects from "./pages/Projects";
 import Journey from "./pages/Journey";
 import Compiling from "./pages/Compiling";
 import Library from "./pages/Library";
+import Contact from "./pages/Contact";
+import Canvas from "./pages/Canvas";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/journey" element={<Journey />} />
         <Route path="/compiling" element={<Compiling />} />
         <Route path="/library" element={<Library />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/canvas" element={<Canvas />} />
       </Route>
     </Routes>
   );

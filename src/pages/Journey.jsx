@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { journeyData } from "../data/contentData";
+import { journeyData, siteMeta } from "../data/contentData";
 
 const tierTitleClass = {
   primary: "text-3xl font-bold sm:text-4xl md:text-5xl",
@@ -85,6 +85,14 @@ export default function Journey() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20 md:px-10 md:py-32">
       <h1 className="font-serif text-3xl text-dark-night sm:text-4xl md:text-5xl">Journey</h1>
+      <a
+        href={siteMeta.resumeHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-3 inline-block font-serif text-sm font-medium text-dark-night underline decoration-dark-night/40 underline-offset-4 transition-colors duration-200 hover:decoration-dark-night"
+      >
+        Download Resume
+      </a>
       <p className="mt-6 max-w-xl text-base leading-relaxed text-dark-night/70">
         A timeline of the people and places that shaped how I think about data — and everything else.
       </p>
