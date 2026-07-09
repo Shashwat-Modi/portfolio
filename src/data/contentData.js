@@ -169,7 +169,7 @@ export const journeyData = [
     byline: "B.Sc. Applied Statistics & Analytics",
     achievements: [
       "President - Placement Cell",
-      "Founding Member & Core team leader - Research Cell",
+      "Founding Member - Research Cell",
       "Founding Member & Head - Music Club"
     ],
     tier: "primary",
