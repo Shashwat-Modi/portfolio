@@ -49,12 +49,12 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
             exit={{ opacity: 0, y: 28, x: 28, scale: 0.94 }}
             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="flex h-[28rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-temple-grey bg-dark-night shadow-2xl shadow-dark-night/30"
+            className="flex h-[600px] w-[450px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-temple-grey bg-dark-night shadow-2xl shadow-dark-night/30 md:h-[680px] md:w-[520px]"
           >
             <div className="flex items-center justify-between border-b border-temple-grey px-5 py-4">
               <div>
                 <p className="font-serif text-sm font-semibold text-snowfall">Shashwat's AI Persona</p>
-                <p className="text-xs font-medium text-snowfall/70">Gemini-powered · placeholder mode</p>
+                <p className="text-xs font-medium text-snowfall/70">Gemini-powered</p>
               </div>
               <button
                 type="button"

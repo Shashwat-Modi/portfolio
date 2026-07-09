@@ -12,6 +12,11 @@
   --color-temple-grey: #c5c0bc;
   --color-frozen-dew: #dccfb8;
   --color-charcoal: #2f2b28;
+
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.4rem;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.65rem;
 }
 
 html {
