@@ -63,7 +63,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="mx-auto max-w-2xl px-6 py-20 md:px-10 md:py-32">
+    <section id="contact" className="mx-auto max-w-2xl px-6 py-20 md:px-10 md:py-32">
       <h1 className="font-serif text-3xl text-dark-night sm:text-4xl md:text-5xl">{contactPageData.heading}</h1>
       <p className="mt-6 max-w-xl text-base leading-relaxed text-dark-night/70">{contactPageData.message}</p>
 

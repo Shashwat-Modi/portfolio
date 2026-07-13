@@ -28,7 +28,9 @@
       "Bash(pkill -f \"vite\")",
       "Bash(rm -f \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/drive.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/check-logo.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/zoom-logo.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/scroll-journey.mjs\" \"/c/Users/modis/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/reshot-home.mjs\")",
       "Bash(echo \"started with PID $!\")",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(curl -s https://vooaeovjvyswctkanabw.supabase.co/rest/v1/ -H 'apikey: sb_publishable_8cQgfstdxuA4Rczgt9NAcw_2YKe8MW5' -H 'Authorization: Bearer sb_publishable_8cQgfstdxuA4Rczgt9NAcw_2YKe8MW5')",
+      "Bash(python3 -m json.tool)"
     ]
   }
 }
