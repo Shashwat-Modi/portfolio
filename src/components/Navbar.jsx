@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import posthog from "posthog-js";
 import { navData, siteMeta } from "../data/contentData";
 
 function ChevronIcon({ open }) {
@@ -41,6 +42,7 @@ function UtilityStrip() {
         rel="noopener noreferrer"
         aria-label="LinkedIn profile"
         className="transition-colors duration-200 hover:text-dark-night"
+        onClick={() => posthog.capture("linkedin_clicked")}
       >
         <LinkedInIcon />
       </a>
@@ -183,6 +185,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="border border-dark-night/30 px-4 py-1.5 text-base font-medium tracking-wide text-dark-night opacity-70 transition-all duration-200 hover:border-dark-night hover:bg-dark-night hover:text-snowfall hover:opacity-100"
+            onClick={() => posthog.capture("resume_downloaded", { location: "navbar_desktop" })}
           >
             {navData.resume.label}
           </a>
@@ -243,6 +246,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="my-6 border border-dark-night/30 py-3 text-center text-base font-medium tracking-wide text-dark-night opacity-70"
+            onClick={() => posthog.capture("resume_downloaded", { location: "navbar_mobile" })}
           >
             {navData.resume.label}
           </a>

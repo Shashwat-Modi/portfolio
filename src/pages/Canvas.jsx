@@ -1,4 +1,5 @@
 import { useState } from "react";
+import posthog from "posthog-js";
 import { canvasPageData } from "../data/contentData";
 import { getApprovedCanvasEntries, submitCanvasEntry } from "../lib/canvasStore";
 
@@ -71,6 +72,12 @@ export default function Canvas() {
       message: form.message,
       anonymous: form.anonymous,
       attachment,
+    });
+
+    posthog.capture("canvas_entry_submitted", {
+      anonymous: form.anonymous,
+      has_attachment: !!file,
+      has_city: !!form.city.trim(),
     });
 
     setSubmitted(true);
