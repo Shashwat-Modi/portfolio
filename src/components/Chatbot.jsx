@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import posthog from "posthog-js";
 import { askGemini } from "../lib/gemini";
 
 const GREETING = {
@@ -26,15 +27,17 @@ export default function Chatbot() {
     setMessages((prev) => [...prev, { role: "user", text }]);
     setInput("");
     setLoading(true);
+    posthog.capture("chatbot_message_sent", { message_length: text.length });
 
     try {
       const reply = await askGemini(text);
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
-    } catch {
+    } catch (err) {
       setMessages((prev) => [
         ...prev,
         { role: "assistant", text: "Something went wrong reaching Gemini. Please try again shortly." },
       ]);
+      posthog.capture("chatbot_error", { error_message: String(err) });
     } finally {
       setLoading(false);
     }
@@ -106,7 +109,11 @@ export default function Chatbot() {
 
       <motion.button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          const next = !open;
+          setOpen(next);
+          if (next) posthog.capture("chatbot_opened");
+        }}
         aria-label={open ? "Close chat" : "Open chat"}
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}

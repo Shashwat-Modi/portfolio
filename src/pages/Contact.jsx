@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import posthog from "posthog-js";
 import { contactPageData } from "../data/contentData";
 
 const initialState = { name: "", email: "", subject: "", message: "" };
@@ -45,12 +46,20 @@ export default function Contact() {
     emailjs
       .send("service_bhq3gab", "template_gx1o1rp", formParams, "3sxZjr28bc4h2uxaF")
       .then(() => {
+        posthog.capture("contact_form_submitted", {
+          subject: form.subject,
+        });
         alert("Message successfully routed to Shashwat! Talk soon.");
         e.target.reset();
         setSent(true);
         setForm(initialState);
       })
-      .catch((err) => console.error("EmailJS Pipeline Interruption:", err));
+      .catch((err) => {
+        console.error("EmailJS Pipeline Interruption:", err);
+        posthog.capture("contact_form_error", {
+          error_message: err?.text ?? String(err),
+        });
+      });
   };
 
   return (

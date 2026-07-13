@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { journeyData, siteMeta } from "../data/contentData";
 
 const tierTitleClass = {
@@ -103,6 +104,7 @@ export default function Journey() {
         target="_blank"
         rel="noopener noreferrer"
         className="mt-3 inline-block font-serif text-sm font-medium text-dark-night underline decoration-dark-night/40 underline-offset-4 transition-colors duration-200 hover:decoration-dark-night"
+        onClick={() => posthog.capture("journey_resume_clicked")}
       >
         Download Resume
       </a>
