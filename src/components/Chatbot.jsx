@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import posthog from "posthog-js";
 import { askGemini } from "../lib/gemini";
+import { supabase } from "../supabaseClient";
 
 const GREETING = {
   role: "assistant",
@@ -32,6 +33,18 @@ export default function Chatbot() {
     try {
       const reply = await askGemini(text);
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
+
+      // Pipeline A: PostHog Custom Event Logger
+      posthog.capture("chatbot_interaction", {
+        user_prompt: text,
+        ai_response: reply,
+      });
+
+      // Pipeline B: Supabase Complete Transcript Vault
+      const { error: logError } = await supabase
+        .from("private_chat_logs")
+        .insert([{ user_prompt: text, ai_response: reply }]);
+      if (logError) console.error("Database logging fail-safe trace:", logError);
     } catch (err) {
       setMessages((prev) => [
         ...prev,

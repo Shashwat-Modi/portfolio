@@ -14,7 +14,7 @@ const modalContent = {
   },
   privacy: {
     title: "Privacy Policy",
-    text: "Data integrity is maintained under zero-exposure protocols. User name and email strings collected during public submissions are used solely for backend log validation and security metrics. Emails are permanently isolated from the public frontend layout layer and are never shared or distributed.",
+    text: "Data integrity is maintained under zero-exposure protocols. User name and email strings collected during public submissions are used solely for backend log validation and security metrics. Emails are permanently isolated from the public frontend layout layer and are never shared or distributed. Chatbot conversational text inputs and generation outputs are logged securely via PostHog and an isolated internal database matrix to evaluate assistant precision and performance; no conversational inputs are shared or distributed to third-party commercial vendors.",
   },
 };
 
