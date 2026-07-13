@@ -5,7 +5,7 @@ import { journeyData, siteMeta } from "../data/contentData";
 const tierTitleClass = {
   primary: "text-3xl font-bold sm:text-4xl md:text-5xl",
   secondary: "text-xl font-bold sm:text-2xl md:text-3xl",
-  tertiary: "text-lg font-normal sm:text-xl",
+  tertiary: "text-lg font-semibold sm:text-xl",
 };
 
 function getInitials(title) {
@@ -65,24 +65,24 @@ function TimelineRow({ node }) {
         <h2 className={`mt-3 font-serif text-dark-night ${tierTitleClass[node.tier]}`}>
           {node.title}
         </h2>
-        <p className="mt-1.5 text-sm uppercase tracking-[0.2em] text-charcoal">
+        <p className="mt-1.5 mb-5 text-sm uppercase tracking-[0.2em] text-charcoal">
           {node.byline}
         </p>
         {node.achievements && node.achievements.length > 0 && (
           <ul className="list-disc pl-5 my-4 space-y-2 text-[#595450]/90">
             {node.achievements.map((bullet, idx) => (
-              <li key={idx} className="tracking-normal text-sm md:text-base font-normal leading-relaxed">{bullet}</li>
+              <li key={idx} className="tracking-normal text-base md:text-lg font-normal leading-relaxed">{bullet}</li>
             ))}
           </ul>
         )}
         {Array.isArray(node.description) ? (
           <div className="space-y-4">
             {node.description.map((paragraph, pIdx) => (
-              <p key={pIdx} className="text-[#595450]/90 text-sm md:text-base font-normal leading-relaxed text-justify">{paragraph}</p>
+              <p key={pIdx} className="text-[#595450]/90 text-base md:text-lg font-normal leading-relaxed text-justify">{paragraph}</p>
             ))}
           </div>
         ) : (
-          <p className="text-[#595450]/90 text-sm md:text-base font-normal leading-relaxed text-justify">{node.description}</p>
+          <p className="text-[#595450]/90 text-base md:text-lg font-normal leading-relaxed text-justify">{node.description}</p>
         )}
       </div>
     </motion.div>
@@ -106,7 +106,7 @@ export default function Journey() {
       >
         Download Resume
       </a>
-      <p className="mt-6 max-w-xl text-base leading-relaxed text-dark-night/70">
+      <p className="mt-6 max-w-xl text-base font-normal leading-relaxed text-dark-night/70 md:text-lg">
         A timeline of the people and places that shaped how I think about data — and everything else.
       </p>
 

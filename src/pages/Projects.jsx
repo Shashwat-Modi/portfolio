@@ -20,7 +20,7 @@ function ProjectRow({ project, index }) {
         <div className="border-4 border-white p-8 md:p-10">
           <span className="font-oldstyle-nums font-serif text-base font-bold text-dark-night/70">{String(index + 1).padStart(2, "0")}</span>
           <h2 className="mt-4 font-serif text-xl text-dark-night sm:text-2xl">{project.title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-dark-night">{project.description}</p>
+          <p className="mt-4 text-base md:text-lg font-normal leading-relaxed text-dark-night">{project.description}</p>
           {project.metric && (
             <p className="mt-4 font-serif text-sm uppercase tracking-[0.25em] text-charcoal">
               {project.metric}

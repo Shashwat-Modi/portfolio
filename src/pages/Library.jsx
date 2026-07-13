@@ -12,7 +12,7 @@ export default function Library() {
       <div className="mt-12 grid w-full grid-cols-1 gap-4 border-t border-temple-grey pt-10 sm:grid-cols-3">
         {libraryPageData.metrics.map((metric) => (
           <div key={metric.label} className="flex flex-col items-center gap-1.5">
-            <span className="font-oldstyle-nums font-serif text-3xl font-bold text-dark-night">{metric.value}</span>
+            <span className="font-oldstyle-nums oldstyle-nums font-serif text-3xl font-bold text-dark-night">{metric.value}</span>
             <span className="font-label text-xs font-light uppercase tracking-[0.2em] text-charcoal">{metric.label}</span>
           </div>
         ))}

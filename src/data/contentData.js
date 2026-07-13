@@ -137,7 +137,7 @@ export const journeyData = [
     title: "Cornell University",
     byline: "Master's in Data Science and Applied Statistics",
     achievements: [
-      "Awarded the Capstone Leadership Award",
+      "Recipient of the Capstone Leadership Award",
       "Served as a Course Assistant under Professor James Minas translating python concepts for business students",
     ],
     tier: "primary",
@@ -289,7 +289,7 @@ export const journeyData = [
     logoFile: "cajcs.png",
     description: [
       "Eleven years is a profound window of time, and spending them during my most formative years means the impact of this place is woven directly into how I think, write, and see the world. Looking back, listing individual project titles, elocution trophies, or MUN awards feels entirely inconsequential. What matters infinitely more is the quiet, daily architecture of curiosity that was built here—the transition from learning basic words and sentences to drafting complex prose and poetry, and the freedom to explore mathematics, track-and-field, art, and computer science with the exact same level of intensity and intrigue. Whether it was pouring a year of effort into a school project on the 2012 London Olympics or competing in the high-stakes adrenaline of an inter-house basketball final, it was an environment that taught me to throw myself completely into everything I touched.",
-      "That expressive clarity and eloquence of thought was first gently prodded in junior school by our headmistress, Mrs. Sushmita Ganguly, who graciously spent her time annotating and correcting a notebook overflowing with essays I had written over a summer break. That standard of care stayed with me through the years, reinforced by the silent, steady observation and unwavering belief of our principal, Mrs. Meera Isaacs, and the precise corrections of our choirmaster, Mr. Ravi Joshua, ringing through the hall during after-school choir practices. To list every educator who shaped this journey—from Mrs. Lele in the first grade all the way to Mrs. Jayanthi Neelakanthan in the tenth—would require a volume of its own. Alongside them were the friends who teased me in the corridors and immediately stood beside me on the basketball court during recess. While it is impossible to map every memory onto a single page, I look back with immense gratitude for a foundation that quietly shaped my earliest habits of inquiry and taught me how to grow.",
+      "That expressive clarity and eloquence of thought was first gently prodded in junior school by our headmistress, Mrs. Susmita Ganguly, who graciously spent her time annotating and correcting a notebook overflowing with essays I had written over a summer break. That standard of care stayed with me through the years, reinforced by the silent, steady observation and unwavering belief of our principal, Mrs. Meera Isaacs, and the precise corrections of our choirmaster, Mr. Ravi Joshua, ringing through the hall during after-school choir practices. To list every educator who shaped this journey—from grade 1 all the way till 10—would require a volume of its own. Alongside them were the friends who teased me in the corridors and immediately stood beside me on the basketball court during recess. While it is impossible to map every memory onto a single page, I look back with immense gratitude for a foundation that quietly shaped my earliest habits of inquiry and taught me how to grow.",
     ]
   },
   {
@@ -299,7 +299,7 @@ export const journeyData = [
     tier: "tertiary",
     logoFile: "trinity.png",
     description: [
-      "The culmination of years of classical training, technical scales, and dynamic interpretation. I remain incredibly thankful to my instructors, Leon D'Souza and Charmis Braganza, for teaching me how to listen closely and appreciate the underlying structure of a composition.",
+      "The culmination of years of classical training, technical scales, and dynamic interpretation. I remain incredibly thankful to my teachers, Mr Leon D'Souza and Mrs Charmis Braganza, for teaching me how to listen closely and appreciate the underlying structure of a composition.",
       "Alongside them, I owe a beautiful debt to all the music teachers who have guided me across different instruments over the years, building my musicality step by step, piece by piece. Together, they taught me to find the intersection of rhythm and rhyme, of ebony and ivory."
     ]
   },

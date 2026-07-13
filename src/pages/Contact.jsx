@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { contactPageData, siteMeta } from "../data/contentData";
+import emailjs from "@emailjs/browser";
+import { contactPageData } from "../data/contentData";
 
 const initialState = { name: "", email: "", subject: "", message: "" };
 
@@ -35,11 +36,21 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
 
-    const body = `From: ${form.name} <${form.email}>\n\n${form.message}`;
-    window.location.href = `mailto:${siteMeta.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    const formParams = {
+      from_name: e.target.name.value,
+      reply_to: e.target.email.value,
+      message: `Subject: ${e.target.subject.value}\n\n${e.target.message.value}`,
+    };
 
-    setSent(true);
-    setForm(initialState);
+    emailjs
+      .send("service_bhq3gab", "template_gx1o1rp", formParams, "3sxZjr28bc4h2uxaF")
+      .then(() => {
+        alert("Message successfully routed to Shashwat! Talk soon.");
+        e.target.reset();
+        setSent(true);
+        setForm(initialState);
+      })
+      .catch((err) => console.error("EmailJS Pipeline Interruption:", err));
   };
 
   return (
@@ -54,6 +65,7 @@ export default function Contact() {
           </label>
           <input
             id="name"
+            name="name"
             type="text"
             value={form.name}
             onChange={handleChange("name")}
@@ -69,6 +81,7 @@ export default function Contact() {
           </label>
           <input
             id="email"
+            name="email"
             type="email"
             value={form.email}
             onChange={handleChange("email")}
@@ -84,6 +97,7 @@ export default function Contact() {
           </label>
           <input
             id="subject"
+            name="subject"
             type="text"
             value={form.subject}
             onChange={handleChange("subject")}
@@ -99,6 +113,7 @@ export default function Contact() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={6}
             value={form.message}
             onChange={handleChange("message")}
@@ -117,7 +132,7 @@ export default function Contact() {
 
         {sent && (
           <p className="font-serif text-sm font-medium text-dark-night">
-            Your message has been queued in your mail client — press send to deliver it.
+            Your message has been sent — thank you for reaching out.
           </p>
         )}
       </form>

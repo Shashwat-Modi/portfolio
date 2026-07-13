@@ -182,10 +182,10 @@ export default function Canvas() {
       </form>
 
       <div className="mt-20 border-t border-temple-grey pt-12">
-        <h2 className="font-serif text-xl text-dark-night sm:text-2xl">The Wall</h2>
+        <h2 className="font-serif text-xl text-dark-night sm:text-2xl">Shared Thoughts</h2>
         {wall.length === 0 ? (
           <p className="mt-4 text-base leading-relaxed text-dark-night/70">
-            No entries have been approved yet — check back once submissions have been reviewed.
+            Looking forward to building a community here. Share your ideas above to start the dialogue!
           </p>
         ) : (
           <div className="mt-8 flex flex-col gap-8">

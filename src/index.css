@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-serif: "Lora", ui-serif, Georgia, serif;
+  --font-sans: "Lora", ui-serif, Georgia, serif;
   --font-cursive: "Pinyon Script", cursive;
   --font-signature: "Alex Brush", cursive;
   --font-label: "Montserrat", ui-sans-serif, system-ui, sans-serif;

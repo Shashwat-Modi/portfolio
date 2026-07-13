@@ -2,21 +2,21 @@ import { homeData } from "../data/contentData";
 
 export default function Home() {
   return (
-    <section className="relative overflow-hidden bg-snowfall">
-      {/* Full-bleed silhouette backdrop at rich, deep opacity */}
+    <section className="relative flex min-h-screen flex-col overflow-y-auto bg-snowfall md:flex-row md:items-center md:justify-between md:overflow-hidden">
+      {/* Full-bleed silhouette backdrop at rich, deep opacity (desktop layered background) */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="hidden bg-cover bg-center md:absolute md:inset-0 md:block"
         style={{ backgroundImage: "url('/hero-silhouette.jpg')" }}
         aria-hidden="true"
       />
       {/* Soft horizontal scrim: pure Snowfall behind the letter column, easing
           into the portrait's native tones toward the right edge */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-snowfall via-snowfall/80 to-transparent md:via-45% md:to-70%"
+        className="hidden bg-gradient-to-r from-snowfall via-snowfall/80 to-transparent md:absolute md:inset-0 md:block md:via-45% md:to-70%"
         aria-hidden="true"
       />
 
-      <div className="relative flex flex-col justify-center px-6 py-10 md:h-[calc(100svh-6.5rem)] md:px-10 md:py-12">
+      <div className="relative z-10 flex flex-col justify-center px-6 py-10 md:h-[calc(100svh-6.5rem)] md:px-10 md:py-12">
         <div className="mr-auto max-w-xl pl-8 md:pl-16">
           <h2 className="font-serif text-xl font-semibold leading-snug text-dark-night sm:text-2xl md:text-3xl">
             {homeData.heading}
@@ -24,7 +24,7 @@ export default function Home() {
 
           <div className="mt-5 space-y-3">
             {homeData.paragraphs.map((paragraph, i) => (
-              <p key={i} className="font-serif text-lg font-medium leading-relaxed text-dark-night/80">
+              <p key={i} className="font-serif text-base font-normal leading-relaxed text-dark-night/80 md:text-lg">
                 {paragraph}
               </p>
             ))}
@@ -38,6 +38,14 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* Mobile-only stacked portrait: sits cleanly below the text with ample
+          whitespace, preventing any overlap between prose and hair/portrait detail */}
+      <div
+        className="h-72 w-full shrink-0 bg-cover bg-center sm:h-96 md:hidden"
+        style={{ backgroundImage: "url('/hero-silhouette.jpg')" }}
+        aria-hidden="true"
+      />
     </section>
   );
 }
