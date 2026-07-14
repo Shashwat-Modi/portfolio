@@ -30,7 +30,8 @@
       "Bash(echo \"started with PID $!\")",
       "Read(//tmp/**)",
       "Bash(curl -s https://vooaeovjvyswctkanabw.supabase.co/rest/v1/ -H 'apikey: sb_publishable_8cQgfstdxuA4Rczgt9NAcw_2YKe8MW5' -H 'Authorization: Bearer sb_publishable_8cQgfstdxuA4Rczgt9NAcw_2YKe8MW5')",
-      "Bash(python3 -m json.tool)"
+      "Bash(python3 -m json.tool)",
+      "WebSearch"
     ]
   }
 }

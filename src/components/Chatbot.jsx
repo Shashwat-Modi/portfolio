@@ -1,12 +1,14 @@
+import ReactMarkdown from 'react-markdown';
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import posthog from "posthog-js";
 import { askGemini } from "../lib/gemini";
 import { supabase } from "../supabaseClient";
+import { dynamicSummaryContext } from "../data/siteSummary";
 
 const GREETING = {
   role: "assistant",
-  text: "Hi, I'm Shashwat's AI persona. Ask me about his projects, experience, or journey.",
+  text: "Hi, I'm Shashwat's AI persona. Ask me about his journey, experiences, or projects.",
 };
 
 export default function Chatbot() {
@@ -17,7 +19,13 @@ export default function Chatbot() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    const lastUserQuestion = document.getElementById("last-user-question");
+    
+    if (lastUserQuestion) {
+      lastUserQuestion.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    }
   }, [messages, open]);
 
   const handleSend = async (e) => {
@@ -31,7 +39,7 @@ export default function Chatbot() {
     posthog.capture("chatbot_message_sent", { message_length: text.length });
 
     try {
-      const reply = await askGemini(text);
+      const reply = await askGemini(text, messages, dynamicSummaryContext);
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
 
       // Pipeline A: PostHog Custom Event Logger
@@ -82,17 +90,39 @@ export default function Chatbot() {
               </button>
             </div>
 
-            <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-5 py-4">
-              {messages.map((m, i) => (
-                <div
-                  key={i}
-                  className={`max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm font-medium leading-relaxed ${
-                    m.role === "user" ? "ml-auto bg-frozen-dew text-dark-night" : "bg-snowfall/10 text-snowfall"
-                  }`}
-                >
-                  {m.text}
-                </div>
-              ))}
+            <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto px-5 py-4">
+              {messages.map((m, i) => {
+                // Identify if this specific element is the absolute last user question message in the current thread array buffer
+                const isLastUserMsg = m.role === "user" && i === messages.findLastIndex(msg => msg.role === "user");
+                
+                return (
+                  <div
+                    key={i}
+                    id={isLastUserMsg ? "last-user-question" : undefined}
+                    className={`max-w-[85%] rounded-xl px-4 py-2.5 text-sm font-medium leading-relaxed ${
+                      m.role === "user" 
+                        ? "ml-auto bg-frozen-dew text-dark-night" 
+                        : "bg-snowfall/10 text-snowfall selection:bg-snowfall/20"
+                    }`}
+                  >
+                    {m.role === "user" ? (
+                      m.text
+                    ) : (
+                      <ReactMarkdown
+                        components={{
+                          h3: ({ node, ...props }) => <h3 className="text-sm font-bold text-snowfall mt-4 mb-2 first:mt-0 tracking-wide uppercase font-serif" {...props} />,
+                          ul: ({ node, ...props }) => <ul className="list-disc pl-5 space-y-1.5 my-2 text-snowfall/90" {...props} />,
+                          li: ({ node, ...props }) => <li className="pl-0.5 text-snowfall/90" {...props} />,
+                          p: ({ node, ...props }) => <p className="mb-2.5 last:mb-0 text-snowfall/90" {...props} />,
+                          strong: ({ node, ...props }) => <strong className="font-semibold text-frozen-dew" {...props} />
+                        }}
+                      >
+                        {m.text}
+                      </ReactMarkdown>
+                    )}
+                  </div>
+                );
+              })}
               {loading && (
                 <div className="max-w-[85%] rounded-xl bg-snowfall/10 px-3.5 py-2.5 text-sm font-medium text-snowfall/70">
                   Thinking…
