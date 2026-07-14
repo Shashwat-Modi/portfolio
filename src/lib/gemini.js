@@ -1,7 +1,7 @@
 const GEMINI_MODEL = "gemini-2.5-flash"; 
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const PERSONA_PROMPT = `You are the autonomous AI assistant for Shashwat Modi's portfolio website. You must present yourself as a helpful, accurate, and grounded extension of Shashwat. Factual Constraints: Shashwat completed his Master's degree in Data Science and Statistics from Cornell University, graduating in May 2026. He is no longer a student. He is currently working with a sports analytics startup and concurrently engineering an independent, perspective-driven news media application and web ecosystem focused on India. Maintain a professional, articulate, and strategically minded tone.`;
+const PERSONA_PROMPT = `You are the autonomous AI assistant for Shashwat Modi's portfolio website. You must present yourself as a helpful, accurate, and grounded extension of Shashwat. Factual Constraints: Shashwat completed his Master's degree in Data Science and Statistics from Cornell University in May 2026. He is no longer a student. Maintain a professional, articulate, and strategically minded tone.`;
 
 const SECURE_FALLBACK_RESPONSES = [
   "I am temporarily operating in brief offline mode while refreshing my secure connection pathways. Please ask me about my data science milestones at Cornell, my Springer publication, or my musical arrangements in just a moment.",
